@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "44b197db-4987-4d68-9dd6-b7b94bcea4c2",
+		"name": "top_dow_treeN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42551353"
+	},
+	"item": [
+		{
+			"name": "get tree",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"10456783\",\r\n  \"parent_id\": \"6789\",\r\n  \"name\": \"laura\",\r\n  \"last_name\": \"perez\",\r\n  \"age\": 25,\r\n  \"gender\": \"femenino\",\r\n  \"type_doc\": {\r\n    \"code\": \"T.I.\",\r\n    \"description\": \"Tarjeta de Identidad\"\r\n  },\r\n  \"location\": {\r\n    \"code\": \"11001\",\r\n    \"description\": \"BOGOTÁ\",\r\n    \"department_code\": \"11\",\r\n    \"department_name\": \"BOGOTÁ D.C.\"\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/persons",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get capitals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/locations/capitals",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"locations",
+						"capitals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get states",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/locations/states",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"locations",
+						"states"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get state by code",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get location by code",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get all typedocs",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get person",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/person/123456",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"person",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add person root",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1094320580\",\r\n    \"parent_id\": \"1091652940\",\r\n    \"name\": \"brayan\",\r\n    \"last_name\": \"sanchez\",\r\n    \"age\": 19,\r\n    \"gender\": \"masculino\",\r\n    \"type_doc\": {\r\n        \"code\": \"C.C\",\r\n        \"description\": \"Cedula de Ciudadania\"\r\n    },\r\n    \"location\": {\r\n  \"code\": \"5001\",\r\n  \"description\": \"MEDELLIN\",\r\n  \"department_code\": \"5\",\r\n  \"department_name\": \"ANTIOQUIA\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/person",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"person"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add child root",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"2\",\r\n  \"parent_id\": \"1094320580\",\r\n  \"name\": \"laura\",\r\n  \"last_name\": \"perez\",\r\n  \"age\": 25,\r\n  \"gender\": \"femenino\",\r\n  \"type_doc\": {\r\n    \"code\": \"T.I.\",\r\n    \"description\": \"Tarjeta de Identidad\"\r\n  },\r\n  \"location\": {\r\n    \"code\": \"11001\",\r\n    \"description\": \"BOGOTÁ\",\r\n    \"department_code\": \"11\",\r\n    \"department_name\": \"BOGOTÁ D.C.\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/person",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"person"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add child root not parent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"10456783\",\r\n  \"parent_id\": \"6789\",\r\n  \"name\": \"laura\",\r\n  \"last_name\": \"perez\",\r\n  \"age\": 25,\r\n  \"gender\": \"femenino\",\r\n  \"type_doc\": {\r\n    \"code\": \"T.I.\",\r\n    \"description\": \"Tarjeta de Identidad\"\r\n  },\r\n  \"location\": {\r\n    \"code\": \"11001\",\r\n    \"description\": \"BOGOTÁ\",\r\n    \"department_code\": \"11\",\r\n    \"department_name\": \"BOGOTÁ D.C.\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/person",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"person"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete person",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"10456783\",\r\n  \"parent_id\": \"6789\",\r\n  \"name\": \"laura\",\r\n  \"last_name\": \"perez\",\r\n  \"age\": 25,\r\n  \"gender\": \"femenino\",\r\n  \"type_doc\": {\r\n    \"code\": \"T.I.\",\r\n    \"description\": \"Tarjeta de Identidad\"\r\n  },\r\n  \"location\": {\r\n    \"code\": \"11001\",\r\n    \"description\": \"BOGOTÁ\",\r\n    \"department_code\": \"11\",\r\n    \"department_name\": \"BOGOTÁ D.C.\"\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/person/1094320580",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"person",
+						"1094320580"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete root",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/person/1094320580",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"person",
+						"1094320580"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update person",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"123456\",\r\n  \"parent_id\": \"1094320580\",\r\n  \"name\": \"sofia\",\r\n  \"last_name\": \"perez\",\r\n  \"age\": 25,\r\n  \"gender\": \"femenino\",\r\n  \"type_doc\": {\r\n    \"code\": \"T.I.\",\r\n    \"description\": \"Tarjeta de Identidad\"\r\n  },\r\n  \"location\": {\r\n    \"code\": \"11001\",\r\n    \"description\": \"BOGOTÁ\",\r\n    \"department_code\": \"11\",\r\n    \"department_name\": \"BOGOTÁ D.C.\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/person/123456",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"person",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get parents adult daughters",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/persons/adult-daughters",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"persons",
+						"adult-daughters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get filter for location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/persons/filter?location_code=11001",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"persons",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "location_code",
+							"value": "11001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get filter location; typedoc; gender",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/persons/filter?location_code=11001&typedoc_code=T.I.&gender=femenino",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"persons",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "location_code",
+							"value": "11001"
+						},
+						{
+							"key": "typedoc_code",
+							"value": "T.I."
+						},
+						{
+							"key": "gender",
+							"value": "femenino"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
